@@ -1,0 +1,16 @@
+{
+  "name": "consola-bot",
+  "version": "3.0.0",
+  "description": "un bot de discord echo por BluePink2304",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "miko KO",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord": "^0.8.2",
+    "discord.js": "^14.14.1"
+  }
+}
