@@ -1,5 +1,6 @@
 #container {
-    margin: 0 auto; /* Esto centrará el contenedor horizontalmente */
+    margin: 0 auto;
+    /* Esto centrará el contenedor horizontalmente */
     padding: 50px;
     background-color: #ffffff;
     border-radius: 30px;
@@ -7,8 +8,10 @@
     grid-template-columns: 1fr;
     gap: 20px;
     max-width: 800px;
-    width: 100%; /* Ocupará el 100% del contenedor padre */
+    width: 100%;
+    /* Ocupará el 100% del contenedor padre */
 }
+
 
 
 #view {
@@ -41,6 +44,7 @@ body {
 .title {
     font-family: 'fat', sans-serif;
 }
+
 a {
     font-family: 'fat', sans-serif;
 }
@@ -78,3 +82,126 @@ a {
     font-style: normal;
     /* Opcional: si es cursiva o normal */
 }
+
+
+
+
+
+
+:root {
+    --mitad-anchura-pantalla: calc(100vw / 2);
+    /* Mitad del ancho de la pantalla */
+    --mitad-altura-pantalla: calc(100vh / 2);
+    /* Mitad de la altura de la pantalla */
+    --img-ancho: 100px;
+    /* Se actualizará dinámicamente desde JavaScript */
+    --img-alto: 100px;
+    /* Se actualizará dinámicamente desde JavaScript */
+}
+
+
+
+
+
+
+
+
+
+
+.loading {
+    transform: scale(3);
+        opacity: 1;
+        left: calc(var(--mitad-anchura-pantalla) - (var(--img-ancho) / 2));
+        top: calc(var(--mitad-altura-pantalla) - (var(--img-alto) / 2));
+    
+    position: fixed;
+    /* Coloca la imagen en el centro calculando la mitad de la pantalla y restando la mitad del tamaño de la imagen */
+    width: 100px;
+    /* Tamaño predeterminado que puede cambiar según tu imagen */
+    height: auto;
+    border-radius: 20px;
+    opacity: 0.45;
+    transition: all 0.5s ease;
+    opacity: 1;
+    /* Suaviza el movimiento */
+
+    z-index: 2;
+}
+
+
+
+@keyframes mover {
+    from {
+        transform: scale(3);
+        opacity: 1;
+        left: calc(var(--mitad-anchura-pantalla) - (var(--img-ancho) / 2));
+        top: calc(var(--mitad-altura-pantalla) - (var(--img-alto) / 2));
+      }
+    
+      to {
+        opacity: 0.55;
+        top: 20px;
+        left: 20px;
+        transform: scale(1);
+        width: 100px;
+      }
+}
+
+@keyframes moverA {
+    from {
+        opacity: 0.55;
+        top: 20px;
+        left: 20px;
+        transform: scale(1);
+        width: 100px;
+        width: 100px;
+      }
+    
+      to {
+        transform: scale(3);
+        opacity: 1;
+        left: calc(var(--mitad-anchura-pantalla) - (var(--img-ancho) / 2));
+        top: calc(var(--mitad-altura-pantalla) - (var(--img-alto) / 2));
+      }
+}
+
+
+@keyframes mover2 {
+    from {
+        transform: scale(3);
+        opacity: 1;
+        left: calc(var(--mitad-anchura-pantalla) - (var(--img-ancho) / 2));
+        top: calc(var(--mitad-altura-pantalla) - (var(--img-alto) / 2));
+      }
+    
+      to {
+        top: 20px;
+        left: 20px;
+        opacity: 1;
+        transform: scale(1);
+        width: 100px;
+        height: 100px;
+      }
+      0%{
+        opacity: 1;
+      }
+      90%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0.55;
+      }
+}
+.background-overlay {
+    transform: scale(3);
+        opacity: 1;
+        left: calc(var(--mitad-anchura-pantalla) - (var(--img-ancho) / 2));
+        top: calc(var(--mitad-altura-pantalla) - (var(--img-alto) / 2));
+    position: fixed;
+    width: 100vw;
+    border-radius: 20px;
+    height: 100vh;
+    background-color: rgb(48, 48, 48);
+    z-index: 1; /* Establece que el fondo negro esté detrás de la imagen */
+
+  }
